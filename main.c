@@ -174,9 +174,6 @@ int main(int argc, char *argv[])
                     B->direction = 3;
                 }
                 break;
-            case 'q':
-                end = true;
-                break;
             case 'p': // pause game
                 draw_char(140, y, 'P', yellow_color);
                 draw_char(180, y, 'A', yellow_color);
