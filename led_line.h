@@ -20,7 +20,6 @@ void led_init(void);
 void line_add();
 void line_off();
 
-void line(void);
 void led_green(char led);
 void led_red(char led);
 void led_blue(char led);
