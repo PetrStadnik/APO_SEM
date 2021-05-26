@@ -41,34 +41,6 @@ void line_off()
     *(volatile uint32_t *)(mem_base + SPILED_REG_LED_LINE_o) = val_line;
 }
 
-void line()
-{
-
-    uint32_t val_line = 2147483648;
-    printf("Hello world\n");
-
-    sleep(1);
-
-    for (uint32_t i = 0; i > 0; i--)
-    {
-        *(volatile uint32_t *)(mem_base + SPILED_REG_LED_LINE_o) = val_line;
-        val_line -= 1;
-        printf("LED val %d\n", val_line);
-        usleep(100 * 1000);
-    }
-    val_line = 0;
-    for (int i = 1; i <= 32; i++)
-    {
-        *(volatile uint32_t *)(mem_base + SPILED_REG_LED_LINE_o) = val_line;
-        printf("LED val %d\n", val_line);
-        val_line += my_pow(2, i);
-        //printf("LED val 0x%x\n", val_line);
-        usleep(500 * 1000);
-    }
-
-    printf("Goodbye world\n");
-}
-
 void led_green(char led)
 {
     uint32_t col = hsv2rgb(114, 255, 200);
